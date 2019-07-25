@@ -11,8 +11,9 @@ public class FreshConfigUtil {
         headers.put("Content-Type", "application/json; charset=utf-8");
         System.out.println("因为要去git获取，还要刷新config-server, 会比较卡，所以一般会要好几秒才能完成，请耐心等待");
  
-        String result = HttpUtil.createPost("http://localhost:8012/actuator/bus-refresh").addHeaders(headers).execute().body();
-        System.out.println("result:"+result);
+        String result = HttpUtil.createPost("http://localhost:8012/actuator/bus-refresh").addHeaders(headers).execute().toString();
+        System.out.println("result:::::::::");
+        System.out.println(result);
         System.out.println("refresh 完成");
     }
 }

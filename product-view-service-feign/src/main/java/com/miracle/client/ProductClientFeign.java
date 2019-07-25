@@ -2,7 +2,6 @@ package com.miracle.client;
 
 import com.miracle.pojo.Product;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
@@ -12,10 +11,10 @@ import java.util.List;
  * @Date 2019/7/24 19:31
  */
 //FeignClient是对Ribbon的封装
-@FeignClient(value = "PRODUCT-DATA-SERVICE")
+@FeignClient(value = "PRODUCT-DATA-SERVICE",fallback = ProductClientFeignHystrix.class)
 //@Component
 public interface ProductClientFeign {
 
     @GetMapping("/products")
-    public List<Product> listProdcut();
+    public List<Product> listProduct();
 }

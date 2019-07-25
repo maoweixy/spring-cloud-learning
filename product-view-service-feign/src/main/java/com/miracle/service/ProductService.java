@@ -1,7 +1,6 @@
 package com.miracle.service;
 
 import com.miracle.client.ProductClientFeign;
-import com.miracle.client.ProductClientRibbon;
 import com.miracle.pojo.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +17,6 @@ public class ProductService {
 	@Autowired
 	private ProductClientFeign productClientFeign;
 	public List<Product> listProducts(){
-		return productClientFeign.listProdcut();
+		return productClientFeign.listProduct();
 	}
 }
