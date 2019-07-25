@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled:  true
+        #  config-server, 这个是配置服务器在 eureka server 里的服务名称，这样就可以定位 config-server了。
+        serviceId:  config-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:8761/eureka/
